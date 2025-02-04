@@ -13,13 +13,11 @@ body {
     line-height: 1.6;
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff; /* White text */
+    color: #fff;
     padding-top: 60px;
-    margin: 20px; /* Added margin around body */
     position: relative;
 }
 
-/* Optional: Add a slight overlay for readability */
 body::before {
     content: "";
     position: absolute;
@@ -27,7 +25,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Subtle dark overlay */
+    background: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
@@ -42,7 +40,7 @@ body::before {
    ==================================================================== */
 
 nav {
-    background-color: #b00000;  /* Deep red navbar */
+    background-color: #b00000;
     padding: 15px 0;
     position: fixed;
     top: 0;
@@ -55,10 +53,11 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 25px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -70,14 +69,24 @@ nav ul li a {
     padding: 12px 18px;
     border-radius: 30px;
     transition: background-color 0.3s, color 0.3s;
-    font-style: italic;
-    letter-spacing: 1.5px;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: #ff0000;  /* Bright red on hover */
-    color: #000;
+    background-color: #cc0000;
+    color: #fff;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
 /* ====================================================================
@@ -90,28 +99,29 @@ section {
 
 h1 {
     font-size: 50px;
-    color: #ff0000; /* Bright red title */
+    color: #ff0000;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin: 40px 20px; /* Added margin around h1 */
+    margin: 40px 20px;
     text-shadow: 3px 3px 5px rgba(255, 0, 0, 0.5);
+    text-align: center;
 }
 
 h2 {
     font-size: 24px;
-    color: #b00000; /* Deep red headings */
+    color: #b00000;
     font-weight: 600;
-    margin: 20px; /* Added margin */
+    margin: 20px;
     text-decoration: underline;
     text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
 }
 
 p {
     font-size: 16px;
-    color: #ccc; /* Light gray text */
+    color: #ccc;
     line-height: 1.5;
-    margin: 20px; /* Added margin around paragraphs */
+    margin: 20px;
     font-style: italic;
     text-shadow: 1px 1px 3px rgba(255, 0, 0, 0.2);
 }
@@ -135,7 +145,7 @@ section.gallery {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     border-radius: 12px;
-    background-color: #222; /* Dark gray background */
+    background-color: #222;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
 }
@@ -160,8 +170,8 @@ section.gallery {
 .gallery-item h2 {
     font-size: 22px;
     font-weight: 700;
-    color: #ff0000; /* Bright red accents */
-    margin: 20px; /* Added margin */
+    color: #ff0000;
+    margin: 20px;
     text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.4);
 }
 
@@ -189,19 +199,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
     .gallery-item {
         width: 100%;
     }
